@@ -20,6 +20,8 @@
 
 #### Style and fill out footer (aka about us)
 
+#### Update README and implement it into the site's footer
+
 ### Room Generation {Simple-Revamp}
 
 #### Implement load and save features, as well as a constructor holding it's type and dimensions

@@ -4,6 +4,7 @@
 
 .Game-window{
 	clear: inherit;
+	
 	background-color: #000000;
 	width: 800px;
 	height: 600px;
@@ -16,15 +17,75 @@
 
 .Game-bar{
 	clear: inherit;
-	background-color: #51854e;
-	width: 800px;
-	height: 40px;
+
 	margin: auto;
 
-	border: 10px;
-	border-top: 0px;
-	border-style: ridge;
-	border-color: darkolivegreen;
+	width: 800px;
+	height: 40px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	padding: 1px;
+}
+
+.Health-bar{
+	clear: inherit;
+	
+	width: 240px;
+	height: 20px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	margin: 1px;
+	padding: 1px;
+}
+
+.Energy-bar{
+	clear: inherit;
+	
+	width: 160px;
+	height: 20px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	margin: 1px;
+	padding: 1px;
+}
+
+.Currency-bar{
+	clear: inherit;
+
+	width: 80px;
+	height: 20px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	margin: 1px;
+	padding: 1px;
+}
+
+.Core-bar{
+	clear: inherit;
+	
+	width: 160px;
+	height: 40px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	margin: 1px;
+	padding: 1px;
+}
+
+.Menu-bar{
+	clear: inherit;
+
+	width: 80px;
+	height: 40px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	opacity: 1;
+	margin: 1px;
+	padding: 1px;
 }
 
 .Game-bar-test{
@@ -49,16 +110,40 @@
 	padding:2px;
 }
 
+.Footer{
+	border:10px;
+	color:  darkolivegreen;
+	border-style: solid ridge;
+	padding-top:-50px;
+}
+
+.Footer-title{
+	font-size: larger;
+	border-style: dashed solid solid;
+	width: 700px;
+	color:  darkolivegreen;;
+}
+
+.Footer-information{
+	border-style: dashed solid solid;
+	width: 500px;
+	color:  darkolivegreen;;
+}
+
+.Footer-temp{
+	color:black;
+}
+
 .App-title{
 	border: 10px;
 	color: darkolivegreen;
 	border-style: solid;
 	border-color: #9dc49a;
-   width: 30%;
+    width: 30%;
 	align-content: center;
-   align-self: center;
-   margin: auto;
-   text-align: center;    
+    align-self: center;
+	margin: auto;
+	text-align: center;    
 }
 
 .App-subtitle{
