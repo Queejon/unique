@@ -4,17 +4,9 @@
 
 ### Make Surrounding Webpage
 
-#### Style Header
-
 #### Style Login Area (feature to be implemented later)
 
-#### Style Game Housing
-
 ##### Bezeled edges surrounding game window
-
-##### Status bar below game window
-
-##### Miscellaneous Menus (i.e. inventory or chat) to the right of the game window
 
 #### Set subtitle to display the current game version
 

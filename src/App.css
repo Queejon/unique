@@ -21,71 +21,119 @@
 	margin: auto;
 
 	width: 800px;
-	height: 40px;
-	background: #FFFFFF 0% 0% no-repeat padding-box;
-	border: 1px solid #707070;
-	opacity: 1;
-	padding: 1px;
+	height: 60px;
+
+	border: 10px;
+	border-style: ridge;
+	border-color: darkolivegreen;
+}
+
+.Stats-bar{
+	clear: inherit;
+
+	width: 30%;
+	height: 100%;
+	float: left;
+
+	padding: 0px;
+	margin: 0px;
+
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 0px;
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.Stats-bottom{
+	clear: inherit;
+
+	grid-column: 1/1;
+	grid-row: 2/2;
+
+	padding: 0px;
+	margin: 0px;
+}
+
+.Abilities-bar{
+	clear: inherit;
+
+	height: 100%;
+	width: 70%;
+	float: right;
+
+	padding: 0px;
+	margin: 0px;
 }
 
 .Health-bar{
 	clear: inherit;
+
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+
+	grid-column: 1/1;
+	grid-row: 1/2;
 	
-	width: 240px;
-	height: 20px;
-	background: #FFFFFF 0% 0% no-repeat padding-box;
-	border: 1px solid #707070;
-	opacity: 1;
-	margin: 1px;
-	padding: 1px;
+	border: 4px;
+	border-top: 0px;
+	border-style: ridge;
+	box-sizing: border-box;
+	border-color: darkolivegreen;
 }
 
 .Energy-bar{
 	clear: inherit;
 	
-	width: 160px;
-	height: 20px;
-	background: #FFFFFF 0% 0% no-repeat padding-box;
-	border: 1px solid #707070;
-	opacity: 1;
-	margin: 1px;
-	padding: 1px;
+	height: 100%;
+	width: 67%;
+	margin: 0px;
+	float: left;
+
+	border: 4px;
+	border-style: ridge;
+	box-sizing: border-box;
+	border-color: darkolivegreen;
 }
 
 .Currency-bar{
 	clear: inherit;
 
-	width: 80px;
-	height: 20px;
-	background: #FFFFFF 0% 0% no-repeat padding-box;
-	border: 1px solid #707070;
-	opacity: 1;
-	margin: 1px;
-	padding: 1px;
+	height: 100%;
+	width: 33%;
+	margin: 0px;
+	float: left;
+	
+	border: 4px;
+	border-style: ridge;
+	box-sizing: border-box;
+	border-color: darkolivegreen;
 }
 
 .Core-bar{
 	clear: inherit;
-	
-	width: 160px;
-	height: 40px;
-	background: #FFFFFF 0% 0% no-repeat padding-box;
-	border: 1px solid #707070;
-	opacity: 1;
-	margin: 1px;
-	padding: 1px;
+
+	width: 186px;
+	height: 100%;
+	float: left;
+
+	border: 4px;
+	border-style: ridge;
+	box-sizing: border-box;
+	border-color: darkolivegreen;
 }
 
-.Menu-bar{
+.Core-bar-last{
 	clear: inherit;
 
-	width: 80px;
-	height: 40px;
-	background: #FFFFFF 0% 0% no-repeat padding-box;
-	border: 1px solid #707070;
-	opacity: 1;
-	margin: 1px;
-	padding: 1px;
+	width: 188px;
+	height: 100%;
+	float: left;
+
+	border: 4px;
+	border-style: ridge;
+	box-sizing: border-box;
+	border-color: darkolivegreen;
 }
 
 .Game-bar-test{
@@ -110,7 +158,38 @@
 	padding:2px;
 }
 
+.Login-outer{
+	clear: inherit;
+
+	top: 0px;
+	width: 20%;
+	float: right;
+	position: relative;
+
+	border: 6px;
+	border-style: solid;
+	border-color: darkolivegreen;
+}
+
+.Login-label{
+	clear: inherit;
+
+	font-size: 26px;
+	color: white;
+}
+
+.Login-input{
+	clear: inherit;
+
+	width: 85%;
+	background-color: #51854e;
+	border: 0px;
+	color: white;
+	font-size: 18px;
+}
+
 .Footer{
+	clear: inherit;
 	border:10px;
 	color:  darkolivegreen;
 	border-style: solid ridge;
@@ -118,43 +197,103 @@
 }
 
 .Footer-title{
+	clear: inherit;
 	font-size: larger;
 	border-style: dashed solid solid;
-	width: 700px;
-	color:  darkolivegreen;;
+	width: 30%;
+	color: whitesmoke;
+	border-color: darkolivegreen;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom:10px;
+	padding-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .Footer-information{
+	clear: inherit;
 	border-style: dashed solid solid;
-	width: 500px;
-	color:  darkolivegreen;;
+	width: 80%;
+	color:  whitesmoke;
+	border-color: darkolivegreen;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom:10px;
+	padding-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .Footer-temp{
+	clear: inherit;
 	color:black;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .App-title{
-	border: 10px;
+	clear: inherit;
+	font-size: 60px;
+	border: 2px;
+	border-color: darkolivegreen;
+	border-style: ridge;
 	color: darkolivegreen;
-	border-style: solid;
-	border-color: #9dc49a;
-    width: 30%;
 	align-content: center;
-    align-self: center;
+   align-self: center;
 	margin: auto;
 	text-align: center;    
 }
 
-.App-subtitle{
-	border: 4px;
-	border-top: 0px;
-	border-style: solid;
-	border-color: #9dc49a;
-	
-	width: 20%;
+.App-title-outer{
+	clear: inherit;
+	border: 2px;
+	color:darkolivegreen;
+	border-style: ridge;
+	border-color: darkolivegreen;
+    width: 30%;
+	align-content: center;
+    align-self: center;
 	margin: auto;
 	text-align: center;
 	
+}
+
+.App-title-inner{
+	clear: inherit;
+	border: 10px;
+	border-style: solid;
+	border-color: #9dc49a;
+}
+
+.App-subtitle{
+	clear: inherit;
+	font-size: 24px;
+	border: 2px;
+	border-top: 0px;
+	border-style: ridge;
+	border-color: darkolivegreen;
+	text-align: center;
+	margin: auto;
 	color: darkolivegreen;
+}
+
+.App-subtitle-outer{
+	clear: inherit;
+	border: 2px;
+	border-top: 0px;
+	border-style: ridge;
+	border-color:darkolivegreen;
+	width: 20%;
+	text-align: center;
+	margin: auto;
+	color: darkolivegreen;
+}
+
+.App-subtitle-inner{
+	clear: inherit;
+	border: 4px;
+	border-top: 0px;
+	border-style: solid;
+	border-color: #9dc49a
 }
