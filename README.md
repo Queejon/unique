@@ -1,68 +1,36 @@
+# README.md
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Current Development build and source-code can be found at our [Git Repository](https://github.com/Queejon/unique).
 
-In the project directory, you can run:
+## What is this game
 
-### `npm start`
+This game is the brain-child of a small development team, meant to push the team to learn more about different facets of
+programming, all while making a (hopefully) fun game to show for it.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About the Devs
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### General Information
 
-### `npm test`
+We go by pseudonyms to protect ourselves from any easy intrusions to our privacy, that said, we'd love to hear from you!
+You can contact us at queejonjin@gmail.com with any questions, suggestions, or concerns. We are all high school age, to
+you adults, but share one thing in common, our passion for creating things. Whether that be programming, writing, music,
+art, or any number of things we do, we love to create.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Below is a brief introduction from each of the devs, feel free to read, or don't. It won't hurt our feelings (too much),
+but it does mean the world any time someone takes the time to really get to know one of our projects, in any way.
 
-### `npm run build`
+### Queejon
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Hey, I go by Queejon, I'm the head Dev of this crazy-ness we call a team. It may be small now, but I have high hopes for
+its future, even if that isn't in a formal sense. I have always loved working with computers, and programming quickly
+became a natural extension to that passion. While I may not be the most artistic, I do my best to make up for it in solid
+logic, both in my programming, and as a person. I also write and compose music, which at some point will hopefully be added
+to this project. That said, we have a lot of lofty goals for this, and many other projecets intended to help us learn
+different facets of programming and development in general, so it's quite the ways down the road as things currently stand.
+That said, I love what I do, and can't wait to make it into a living.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### How_Live
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+lorem ipsum dolor. Hello World!

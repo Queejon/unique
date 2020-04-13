@@ -4,9 +4,9 @@ import './App.css';
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.setState({
-      id: "Queejon"
-    });
+    this.state = {
+      version: "0.0.1"
+    }
   }
 
   render(props){
@@ -14,7 +14,7 @@ class App extends React.Component{
       <div className="App">
         {new Login(props).render(props)}
         <div className="App-title-outer"><div className="App-title-inner"><h2 className="App-title">Unique</h2></div></div>
-        <div className="App-subtitle-outer"><div className="App-subtitle-inner"><h3 className="App-subtitle">This is the game. </h3></div></div>
+        <div className="App-subtitle-outer"><div className="App-subtitle-inner"><h3 className="App-subtitle">Version {this.state.version} </h3></div></div>
         <br></br>
         <br></br>
         {new Game(props).render(props)}
@@ -109,10 +109,14 @@ class Login extends React.Component{
       <div className="Login-outer">
         <form>
           <label className="Login-label" for="Login_Username">Username:</label>
+          <br></br>
           <input className="Login-input" type="text" name="Login_Username" id="Login_Username"></input>
           <br></br>
           <label className="Login-label" for="Login_ID">ID:</label>
+          <br></br>
           <input className="Login-input" type="text" name="Login_ID" id="Login_ID"></input>
+          <br></br>
+          <input className="Login-button" type="submit" value="Log In"></input>   <input className="Signin-button" type="submit" value="Sign In"></input>
         </form>
       </div>
     );
@@ -132,10 +136,7 @@ class Footer extends React.Component{
       <div className="Footer">
         <h4 className="Footer-title">About Us</h4>
         <p className="Footer-information">
-          Footer information will go here.
-        </p>
-        <p className="Footer-temp">
-        Later implementation of our README.md will be put here.
+          Later implementation of the README.md will go here.
         </p>
       </div>
     );

@@ -2,18 +2,6 @@
 
 ## Items
 
-### Make Surrounding Webpage
-
-#### Style Login Area (feature to be implemented later)
-
-##### Bezeled edges surrounding game window
-
-#### Set subtitle to display the current game version
-
-#### Style and fill out footer (aka about us)
-
-#### Update README and implement it into the site's footer
-
 ### Room Generation {Simple-Revamp}
 
 #### Implement load and save features, as well as a constructor holding it's type and dimensions
@@ -130,6 +118,8 @@
 
 ### Implement Map
 
+#### Basic steps tbd
+
 ### Implement Break/Death Drops
 
 #### Implement chance function
@@ -137,6 +127,10 @@
 #### Implement item add to inventory
 
 ### Implement Server
+
+#### Implement auto updating of subtitle from package.json file
+
+#### Implement README.md into footer
 
 #### Implement Credential API for logging in and profile saving
 
@@ -168,7 +162,7 @@
 
 ### Implement Skill Growth
 
-#### Basic step tbd
+#### Basic steps tbd2
 
 ## Completed Items
 

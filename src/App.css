@@ -136,11 +136,6 @@
 	border-color: darkolivegreen;
 }
 
-.Game-bar-test{
-	margin: auto;
-	padding: 2px;
-}
-
 .Game-menu{
 	clear: inherit;
 	background-color: #51854e;
@@ -182,10 +177,40 @@
 	clear: inherit;
 
 	width: 85%;
+
 	background-color: #51854e;
 	border: 0px;
+
 	color: white;
 	font-size: 18px;
+}
+
+.Login-button{
+	clear: inherit;
+
+	width: 60%;
+	float: left;
+
+	border: 1px;
+	border-style: solid;
+	border-bottom: 0px;
+	border-left: 0px;
+	border-color: darkolivegreen;
+	background-color: #9dc49a;
+}
+
+.Signin-button{
+	clear: inherit;
+
+	width: 40%;
+	float: right;
+
+	border: 1px;
+	border-style: solid;
+	border-bottom: 0px;
+	border-right: 0px;
+	border-color: darkolivegreen;
+	background-color: #9dc49a;
 }
 
 .Footer{
@@ -221,13 +246,6 @@
 	padding-top: 10px;
 	padding-bottom:10px;
 	padding-left: 5px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.Footer-temp{
-	clear: inherit;
-	color:black;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
