@@ -153,16 +153,28 @@
 	padding:2px;
 }
 
-.Login-outer{
+.Login-inner{
 	clear: inherit;
 
+	height: 100%;
+	margin: 0px;
+
+	border: 6px;
+	border-style: solid;
+	border-color: darkolivegreen;
+}
+
+.Login-detail{
+	clear: inherit;
+	
 	top: 0px;
 	width: 20%;
 	float: right;
 	position: relative;
 
-	border: 6px;
-	border-style: solid;
+	padding: 0px;
+	border: 2px;
+	border-style: ridge;
 	border-color: darkolivegreen;
 }
 
@@ -258,7 +270,7 @@
 	border-style: ridge;
 	color: darkolivegreen;
 	align-content: center;
-   align-self: center;
+    align-self: center;
 	margin: auto;
 	text-align: center;    
 }

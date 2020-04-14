@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
+const PIXI = require('pixi.js');
 
 class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      version: "0.0.1"
+      version: "0.0.1",
+      game: new Game(props)
     }
   }
 
@@ -17,7 +19,7 @@ class App extends React.Component{
         <div className="App-subtitle-outer"><div className="App-subtitle-inner"><h3 className="App-subtitle">Version {this.state.version} </h3></div></div>
         <br></br>
         <br></br>
-        {new Game(props).render(props)}
+        {this.state.game.render(props)}
         <br></br>
         <br></br>
         <br></br>
@@ -27,13 +29,20 @@ class App extends React.Component{
       </div>
     );
   }
+
+  componentDidMount(props){
+    this.state.game.componentDidMount(props);
+  }
 }
 
 class Game extends React.Component{
   constructor(props){
     super(props);
     this.setState({
-
+      id: "id123",
+      settings: {
+        implementation: "later"
+      }
     });
   }
 
@@ -45,6 +54,44 @@ class Game extends React.Component{
         {new GameMenu(props).render(props)}
       </div>
     );
+  }
+
+  componentDidMount(props){
+    const app = new PIXI.Application({
+      width: 800, height: 600, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+    });
+    document.body.appendChild(app.view);
+    
+    const container = new PIXI.Container();
+    
+    app.stage.addChild(container);
+    
+    // Create a new texture
+    const texture = PIXI.Texture.from('src/assets/bunny.png');
+    
+    // Create a 5x5 grid of bunnies
+    for (let i = 0; i < 25; i++) {
+        const bunny = new PIXI.Sprite(texture);
+        bunny.anchor.set(0.5);
+        bunny.x = (i % 5) * 40;
+        bunny.y = Math.floor(i / 5) * 40;
+        container.addChild(bunny);
+    }
+    
+    // Move container to the center
+    container.x = app.screen.width / 2;
+    container.y = app.screen.height / 2;
+    
+    // Center bunny sprite in local container coordinates
+    container.pivot.x = container.width / 2;
+    container.pivot.y = container.height / 2;
+    
+    // Listen for animate update
+    app.ticker.add((delta) => {
+        // rotate the container!
+        // use delta to create frame-independent transform
+        container.rotation -= 0.01 * delta;
+    });
   }
 }
 
@@ -106,7 +153,8 @@ class Login extends React.Component{
 
   render(props){
     return(
-      <div className="Login-outer">
+      <div className="Login-detail">
+      <div className="Login-inner">
         <form>
           <label className="Login-label" for="Login_Username">Username:</label>
           <br></br>
@@ -118,6 +166,7 @@ class Login extends React.Component{
           <br></br>
           <input className="Login-button" type="submit" value="Log In"></input>   <input className="Signin-button" type="submit" value="Sign In"></input>
         </form>
+      </div>
       </div>
     );
   }

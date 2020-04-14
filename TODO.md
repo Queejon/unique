@@ -2,12 +2,6 @@
 
 ## Items
 
-### Room Generation {Simple-Revamp}
-
-#### Implement load and save features, as well as a constructor holding it's type and dimensions
-
-#### Implement Enemy generation (scenario retrival & handling)
-
 ### Player
 
 #### Implement the player's basic movement (w,s,a,d)
@@ -131,6 +125,8 @@
 #### Implement auto updating of subtitle from package.json file
 
 #### Implement README.md into footer
+
+#### Implement serverside saving of dungeon schematics
 
 #### Implement Credential API for logging in and profile saving
 
