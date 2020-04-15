@@ -2,6 +2,14 @@
 
 ## Items
 
+### Implement Basic Game Existance
+
+#### Implement Game rendering using Pixi.js
+
+#### Implement rendering of a player placeholder/sprite
+
+#### Remove unnecessary props passing and calls in methods/remove React from classes where possible
+
 ### Player
 
 #### Implement the player's basic movement (w,s,a,d)
@@ -23,6 +31,20 @@
 #### Implement the player's abilities page [Just keybind and basic UI structure] (o) {Single-Revamp}
 
 #### Implement the player's compendium [Just keybind and basic UI structure] (m) {Single-Revamp}
+
+### Start Menu
+
+#### Implement Start Menu handling in rendering
+
+#### Implement Start button
+
+#### Implement Settings button
+
+#### Implement share button
+
+#### Implement share button functionality (or stand in functionality)
+
+#### Implement settings menu
 
 ### Enemy Spawning/Creation
 
