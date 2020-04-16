@@ -1,7 +1,10 @@
 import React from 'react';
 import './App.css';
+import Player from './scripts/Player';
 
-import GameRunner from './scripts/GameRunner';
+const PIXI = require('pixi.js');
+
+let keys = {};
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -52,7 +55,11 @@ class Game extends React.Component{
         implementation: "later",
         first_render: true,
       },
-      game: new GameRunner(props)
+      game: new PIXI.Application({width: 800, height: 600, transparent: true}),
+      player: null,
+      firstRun: true,
+      enemies: [],
+      floors: [{},{},{}],
     }
   }
 
@@ -71,6 +78,37 @@ class Game extends React.Component{
   }
 
   componentDidMount(props){
+    this.state.player = new Player(this.state.game.stage.width/2, this.state.game.stage.height/2) ;
+    window.addEventListener("keydown", this.keysDown);
+    window.addEventListener("keyup", this.keysUp);
+    this.state.game.stage.addChildAt(this.state.player.state.body, 0);
+    this.state.game.view.id = "Game-driver";
+    document.getElementById("Game-window").appendChild(this.state.game.view);
+    this.state.game.ticker.add(delta => this.movementLoop());
+  }
+
+  keysDown(e){
+    console.log(e.keyCode);
+    keys[e.keyCode] = true;
+  }
+
+  keysUp(e){
+    //console.log(e.keyCode);
+    keys[e.keyCode] = false;
+  }
+
+  movementLoop(){
+    if(keys["87"])
+      this.state.player.state.y -= 5;
+    if(keys["83"])
+      this.state.player.state.y += 5;
+    if(keys["65"])
+      this.state.player.state.x -= 5;
+    if(keys["68"])
+      this.state.player.state.x += 5;
+    this.state.player.update();
+    this.state.game.stage.removeChildAt(0);
+    this.state.game.stage.addChildAt(this.state.player.state.body, 0);
   }
 }
 

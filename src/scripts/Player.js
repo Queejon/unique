@@ -4,21 +4,32 @@ import '../App.css';
 const PIXI = require('pixi.js');
 
 class Player{
-   constructor(){
+   constructor(x, y){
       this.state = {
-
+         x: x,
+         y: y,
+         body: new PIXI.Graphics()
       }
+      this.init();
+      
    }
 
-   render(){
+   init(){
+      if(this.state.x == null || this.state.x === undefined)
+         this.state.x = 0;
+      if(this.state.y == null || this.state.y === undefined)
+         this.state.y = 0;
 
-      let body = new PIXI.Graphics();
-      body.beginFill(0x5cafe2);
-      body.drawRect(0, 0, 16, 16);
-      body.x = 0;
-      body.y = 0;
+      this.state.body.beginFill(0x5cafe2);
+      this.state.body.drawRect(0, 0, 16, 16);
+      this.state.body.x = this.state.x;
+      this.state.body.y = this.state.y;
+      this.state.body.id = "player";
+   }
 
-      return body;
+   update(){
+      this.state.body.x = this.state.x;
+      this.state.body.y = this.state.y;
    }
 }
 

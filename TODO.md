@@ -2,17 +2,7 @@
 
 ## Items
 
-### Implement Basic Game Existance
-
-#### Implement Game rendering using Pixi.js
-
-#### Implement rendering of a player placeholder/sprite
-
-#### Remove unnecessary props passing and calls in methods/remove React from classes where possible
-
 ### Player
-
-#### Implement the player's basic movement (w,s,a,d)
 
 #### Implement the player's dodge ability [Just keybind and movement not intagibility] (space)
 
