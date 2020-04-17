@@ -4,18 +4,6 @@
 
 ### Player
 
-#### Implement the player's dodge ability [Just keybind and movement not intagibility] (space)
-
-#### Implement the player's attacks [Just keybinds] (mouse events)
-
-#### Implement the player's abilities [Just keybinds] (1,2,3)
-
-#### Implement the player's interaction [Just keybinds since it's on a case by case basis] (e)
-
-#### Implement the player's chat/command window [Just keybinds and a few basic commands] (t)
-
-#### Implement player's map [Just the keybind] (TAB)
-
 #### Implement the player's Inventory [Just keybind and basic UI structure] (e) {Single-Revamp}
 
 #### Implement the player's abilities page [Just keybind and basic UI structure] (o) {Single-Revamp}
