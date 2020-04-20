@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
+import Title from './scripts/Title';
 import Player from './scripts/Player';
+import Inventory from './scripts/Inventory';
 
 const PIXI = require('pixi.js');
 
@@ -10,7 +12,8 @@ class App extends React.Component{
     super(props);
     this.state = {
       version: "0.0.1",
-      game: new Game(props)
+      game: new Game(props),
+      title: new Title(props)
     }
   }
 
@@ -19,6 +22,7 @@ class App extends React.Component{
       <div className="App">
         <div className="App-title-outer"><div className="App-title-inner"><h2 className="App-title">Unique</h2></div></div>
         <div className="App-subtitle-outer"><div className="App-subtitle-inner"><h3 className="App-subtitle">Version {this.state.version} </h3></div></div>
+        {this.title(props)}
         <br></br>
         <br></br>
         {this.state.game.render(props)}
@@ -32,11 +36,18 @@ class App extends React.Component{
     );
   }
 
-  componentDidUpdate(props){
-    if(this.state.first_render)
-      this.setState({
-        first_render: false
-      });
+  title(props){
+    if(this.state.title.state.display === true){
+      return this.state.title.render(props);
+    }
+    else{
+      if(this.state.game.state.player.menuTitle === "_title"){
+        let player = this.state.game.state.player;
+        player.inMenu = false;
+        player.menuTitle = "none";
+        this.state.game.setState({player: player});
+      }
+    }
   }
 
   componentDidMount(props){
@@ -88,7 +99,7 @@ class Game extends React.Component{
 
   async init2(){
     //Disabling Mouse Features
-    document.oncontextmenu = () => {return false};
+    document.oncontextmenu = (e) => {return false};
     //Mouse and Keyboard Events
     window.addEventListener("keydown", this.keysDown);
     window.addEventListener("keyup", this.keysUp);
@@ -120,75 +131,89 @@ class Game extends React.Component{
   }
 
   playerLoop(props){
-    let player = this.state.player;
-    if(!player.inMenu){
-      //Movement
-      if(keys["87"])
-        if(player.y - player.speed >= 0)
-          player.y -= player.speed;
-        else
-          player.y = 0;
-      if(keys["83"])
-        if(player.y + player.speed <= 584)
-          player.y += player.speed;
-        else
-          player.y = 584;
-      if(keys["65"])
-        if(player.x - player.speed >= 0)
-          player.x -= player.speed;
-        else
-          player.x = 0;
-      if(keys["68"])
-        if(player.x + player.speed <= 784)
-          player.x += player.speed;
-        else
-          player.x = 784;
-      //Sprint/Dodge
-      if(keys["16"])
-        player.speed = 8;
-      if(!keys["16"])
-        player.speed = 5;
-      //Abilities
-      if(keys["M0"])
-        player.ability1_P();
-      if(keys["49"])
-        player.ability1_S();
-      if(keys["M2"])
-        player.ability2_P();
-      if(keys["50"])
-        player.ability2_S();
-      if(keys["51"])
-        player.ability3_S();
-      //Interact
-      if(keys["69"])
-        player.interact();
-      //Open Chat/Commands
-      if(keys["84"])
-        this.openConsole(props);
-      //Open Map
-      if(keys["77"])
-        this.openMap(props);
-      this.setState({player: player});
-      this.state.player.update();
-    }
-    else if(player.menuTitle === "_console"){
-      this.setState({player: player});
-      this.state.player.update();
-      if(keys["27"])
-        this.closeMenu(props);
-      if(keys["13"]){
-        this.timer.message = true;
-        setTimeout(() => {this.timer.message = false}, 1000);
-        if(this.timer.message)
-          this.consoleMessage(props);
-        keys["13"] = false;
+      //console.log(keys);
+      let player = this.state.player;
+      if(!this.state.player.inMenu){
+        //Movement
+        if(keys["87"])
+          if(player.y - player.speed >= 0)
+            player.y -= player.speed;
+          else
+            player.y = 0;
+        if(keys["83"])
+          if(player.y + player.speed <= 584)
+            player.y += player.speed;
+          else
+            player.y = 584;
+        if(keys["65"])
+          if(player.x - player.speed >= 0)
+            player.x -= player.speed;
+          else
+            player.x = 0;
+        if(keys["68"])
+          if(player.x + player.speed <= 784)
+            player.x += player.speed;
+          else
+            player.x = 784;
+        //Sprint/Dodge
+        if(keys["16"])
+          player.speed = 8;
+        if(!keys["16"])
+          player.speed = 5;
+        //Abilities
+        if(keys["M0"])
+          player.ability1_P();
+        if(keys["49"])
+          player.ability1_S();
+        if(keys["M2"])
+          player.ability2_P();
+        if(keys["50"])
+          player.ability2_S();
+        if(keys["51"])
+          player.ability3_S();
+        //Interact
+        if(keys["69"])
+          player.interact();
+        //Open Chat/Commands
+        if(keys["84"])
+          this.openConsole(props);
+        //Open Map
+        if(keys["77"])
+          this.openMap(props);
+        //Open Inventory
+        if(keys["73"])
+          this.openInventory(props);
+        //Open Abilities
+        if(keys["79"])
+          this.openAbilities(props);
+        this.setState({player: player});
+        this.state.player.update();
       }
-      this.updateConsoleDisplay(props);
-    }
-    else if(player.menuTitle === "_map"){
-      if(keys["27"])
-        this.closeMenu(props);
-    }
+      if(player.menuTitle === "_console"){
+        if(keys["27"])
+          this.closeMenu(props);
+        if(keys["13"]){
+          this.timer.message = true;
+          setTimeout(() => {this.timer.message = false}, 1000);
+          if(this.timer.message)
+            this.consoleMessage(props);
+          keys["13"] = false;
+        }
+        this.updateConsoleDisplay(props);
+      }
+      if(player.menuTitle === "_map"){
+        if(keys["27"])
+          this.closeMenu(props);
+      }
+      if(player.menuTitle === "_inventory"){
+        if(keys["27"]){
+          this.closeMenu(props);
+        }
+      }
+      if(player.menuTitle === "_abilities"){
+        if(keys["27"])
+          this.closeMenu(props);
+      }
   }
 
   openConsole(props){
@@ -197,7 +222,9 @@ class Game extends React.Component{
     let cover = new PIXI.Graphics();
     cover.beginFill(0x556b2f, .40);
     cover.drawRect(0, 0, 800, 600);
-    this.state.game.stage.addChildAt(cover, 0);
+    let game = this.state.game;
+    game.stage.addChildAt(cover, 0);
+    this.setState({game: game});
 
     let gameMenu = this.state.gameMenu;
     gameMenu.state.menu = this.consoleMenu(props);
@@ -292,14 +319,14 @@ class Game extends React.Component{
     let cover = new PIXI.Graphics();
     cover.beginFill(0x556b2f, .40);
     cover.drawRect(0, 0, 800, 600);
-    this.state.game.stage.addChildAt(cover, 0);
+    let game = this.state.game;
+    game.stage.addChildAt(cover, 0);
+    this.setState({game: game});
 
     let gameMenu = this.state.gameMenu;
     gameMenu.state.menu = this.mapMenu(props);
     this.setState({gameMenu: gameMenu});
   }
-
-  
 
   mapMenu(props){
     return(
@@ -309,7 +336,82 @@ class Game extends React.Component{
     )
   }
 
+  openInventory(props){
+    this.state.player.openInventory();
+
+    let cover = new PIXI.Graphics();
+    cover.beginFill(0x556b2f, .40);
+    cover.drawRect(0, 0, 800, 600);
+    let game = this.state.game;
+    game.stage.addChildAt(cover, 0);
+    this.setState({game: game});
+
+    let gameMenu = this.state.gameMenu;
+    gameMenu.state.menu = this.inventoryMenu(props);
+    this.setState({gameMenu: gameMenu});
+  }
+
+  inventoryMenu(props){
+    return(
+      <div className="Inventory-backdrop">
+        <div className="Inventory-header">Inventory  (not yet implemented)</div>
+        <div className="Inventory-container">
+          {this.inventoryItems(props)}
+        </div>
+      </div>
+    )
+  }
+
+  inventoryItems(props){
+    let result =  [
+                    [],
+                    [],
+                    [],
+                    []
+                  ];
+    for(let k = 0; k < result.length; k++){
+      for(let i = 0; i < 10; i++){
+        result[k][i] = new Inventory.Item(props, this.state.player, k, i).render(props);
+      }
+      result[k][11] = (<br className="Empty"></br>);
+    }
+    return result;
+  }
+
+  openAbilities(props){
+    this.state.player.openAbilities();
+
+    let cover = new PIXI.Graphics();
+    cover.beginFill(0x556b2f, .40);
+    cover.drawRect(0, 0, 800, 600);
+    let game = this.state.game;
+    game.stage.addChildAt(cover, 0);
+    this.setState({game: game});
+
+    let gameMenu = this.state.gameMenu;
+    gameMenu.state.menu = this.abilitiesMenu(props);
+    this.setState({gameMenu: gameMenu});
+  }
+
+  abilitiesMenu(props){
+    return(
+      <div className="Abilities-backdrop">
+        <div className="Abilities-header">Abilities  (not yet implemented)</div>
+        <div className="Abilities-container" id="Ability1">
+          <div className="Abilities-header2">Ability 1</div>
+        </div>
+        <div className="Abilities-container" id="Ability2">
+          <div className="Abilities-header2">Ability 2</div>
+        </div>
+        <div className="Abilities-container" id="Ability3">
+        <div className="Abilities-header2">Ability 3</div>
+        </div>
+      </div>
+    )
+  }
+
   closeMenu(props){
+    console.log("menu closed");
     this.state.player.closeMenu();
     this.state.game.stage.removeChildAt(0);
     let gameMenu = this.state.gameMenu;

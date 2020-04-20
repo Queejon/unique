@@ -1,7 +1,8 @@
-/*import React from 'react';
+//import React from 'react';
 import '../App.css';
-*/
+import Inventory from './Inventory';
 const PIXI = require('pixi.js');
+
 
 class Player{
    /**
@@ -14,8 +15,9 @@ class Player{
       this.y = yPos;
       this.speed = 5;
       this.body = new PIXI.Graphics();
-      this.inMenu = false;
-      this.menuTitle = "none";
+      this.inMenu = true;
+      this.menuTitle = "_title";
+      this.inventory = new Inventory.Manage();
       this.init();
    }
    /**
@@ -95,6 +97,16 @@ class Player{
    openMap(){
       this.inMenu = true;
       this.menuTitle = "_map";
+   }
+
+   openInventory(){
+      this.inMenu = true;
+      this.menuTitle = "_inventory";
+   }
+
+   openAbilities(){
+      this.inMenu = true;
+      this.menuTitle = "_abilities";
    }
 
    closeMenu(){

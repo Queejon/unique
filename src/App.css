@@ -6,6 +6,81 @@
 	border: 0px;
 }
 
+.Title-page{
+	clear: inherit;
+
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 200%;
+	background-color: #000000;
+	margin: 0px;
+}
+
+.Start-button{
+	clear: inherit;
+
+	position: absolute;
+	top: 30%;
+	left: 35%;
+	width: 30%;
+	height: 5%;
+	margin-bottom: 0px;
+
+	background-color: #9dc49a;
+	color: #142e14;
+	font-weight: bolder;
+	font-size: 45px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+
+	border-width: 4px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Settings-button{
+	clear: inherit;
+
+	position: absolute;
+	top: 35%;
+	left: 35%;
+	width: 20%;
+	height: 5%;
+	margin-top: 0px;
+
+	background-color: #9dc49a;
+	color: #142e14;
+	font-weight: bolder;
+	font-size: 45px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+
+	border-width: 4px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Share-button{
+	clear: inherit;
+
+	position: absolute;
+	top: 35%;
+	left: 55%;
+	width: 10%;
+	height: 5%;
+	margin-top: 0px;
+
+	background-color: #9dc49a;
+	color: #142e14;
+	font-weight: bolder;
+	font-size: 45px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+
+	border-width: 4px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
 .Game{
 	clear: inherit;
 }
@@ -198,6 +273,119 @@
 	overflow-y: scroll;
 }
 
+.Inventory-backdrop{
+	clear: inherit;
+
+	margin: auto;
+	padding: 0px;
+	width: 99.5%;
+	height: 200px;
+
+	background-color: #51854e;
+	color: #d4d4d4;
+	overflow-y: scroll;
+}
+
+.Inventory-header{
+	clear: inherit;
+
+	margin: 0px;
+	width: 98.5%;
+	height: 40px;
+
+	font-size: 30px;
+	text-align: center;
+
+	border: 5px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Inventory-container{
+	clear: inherit;
+
+	margin: 0px;
+	padding: auto;
+	width: 97.2%;
+	height: 300px;
+
+	border: 10px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Inventory-item{
+	clear: inherit;
+
+	margin: 3px;
+	width: 60px;
+	height: 60px;
+	float: left;
+
+	border: 4px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Abilities-backdrop{
+	clear: inherit;
+
+	margin: auto;
+	padding: 0px;
+	width: 99.5%;
+	height: 200px;
+
+	background-color: #51854e;
+	color: #d4d4d4;
+	overflow-y: scroll;
+}
+
+.Abilities-header{
+	clear: inherit;
+
+	margin: 0px;
+	width: 98.5%;
+	height: 40px;
+
+	font-size: 30px;
+	text-align: center;
+
+	border: 5px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Abilities-header2{
+	clear: inherit;
+
+	margin: 0px;
+	width: 98.5%;
+	height: 30px;
+
+	font-size: 20px;
+	text-align: center;
+
+	border: 5px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Abilities-container{
+	clear: inherit;
+
+	margin: 20px;
+	padding: auto;
+	width: 25%;
+	height: 300px;
+	float: left;
+
+	border: 10px;
+	border-style: solid;
+	border-color: #142e14;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
 .Login-inner{
 	clear: inherit;
 
@@ -310,6 +498,7 @@
 .App-title{
 	clear: inherit;
 	font-size: 60px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	border: 2px;
 	border-color: darkolivegreen;
 	border-style: ridge;
@@ -344,6 +533,7 @@
 .App-subtitle{
 	clear: inherit;
 	font-size: 24px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	border: 2px;
 	border-top: 0px;
 	border-style: ridge;
