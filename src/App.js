@@ -433,9 +433,9 @@ class Game extends React.Component{
 class GameBar extends React.Component{
   constructor(props){
     super(props);
-    this.setState({
+    this.state = {
 
-    });
+    };
   }
 
   render(props){
@@ -488,9 +488,9 @@ class GameMenu extends React.Component{
 class Footer extends React.Component{
   constructor(props){
     super(props);
-    this.setState({
+    this.state = {
 
-    });
+    };
   }
 
   render(props){

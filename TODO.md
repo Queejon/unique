@@ -8,6 +8,14 @@
 
 #### Implement settings menu
 
+### Migrate Processes to their own files
+
+#### Migrate whole classes to their own files
+
+#### Migrate like functions from unbefitting classes into their own class and file
+
+#### Migrate functions better suited in another class/file to the respective class/file
+
 ### Enemy Spawning/Creation
 
 #### Implement constructor referencing database of enemy types

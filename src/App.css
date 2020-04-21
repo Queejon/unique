@@ -13,8 +13,20 @@
 	left: 0px;
 	top: 0px;
 	width: 100%;
-	height: 200%;
-	background-color: #000000;
+	height: 100%;
+	background-color: #8e998d;
+	margin: 0px;
+}
+
+.Background{
+	clear: inherit;
+
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	
+	background-color: #8e998d;
 	margin: 0px;
 }
 
@@ -79,6 +91,67 @@
 	border-width: 4px;
 	border-style: solid;
 	border-color: #142e14;
+}
+
+.Share-container{
+	clear: inherit;
+	
+	padding: 0px;
+	width: 50%;
+	margin: auto;
+
+	border: 8px;
+	border-style: solid;
+	border-color: #142e14;
+}
+
+.Share-header{
+	position: relative;
+	width: 80%;
+	left: 10%;
+	height: 20%;
+	margin-top: 0px;
+
+	color: #d4d4d4;
+	text-align: center;
+	border: 3px;
+	border-style: solid;
+	border-color: #51854e;
+}
+
+.Share-link-container{
+	clear: inherit;
+
+	width: 20%;
+	margin: auto;
+	padding: 0px;
+
+	text-align: center;
+	font-size: larger;
+	border: 3px;
+	border-style: solid;
+	border-color: #51854e;
+	color: #d4d4d4;
+}
+
+a.Share-link{
+	clear: inherit;
+
+	margin: 0px;
+	
+
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: bolder;
+	color: #d4d4d4;
+	text-decoration: none;
+}
+
+a:visited.Share-link{
+	color: #d4d4d4;
+}
+
+a:hover.Share-link{
+	color: #51854e;
 }
 
 .Game{
