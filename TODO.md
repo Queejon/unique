@@ -2,33 +2,19 @@
 
 ## Items
 
-### Room Generation {Simple-Revamp}
+### Start Menu
 
-#### Implement load and save features, as well as a constructor holding it's type and dimensions
+#### Implement share button functionality (or stand in functionality)
 
-#### Implement Enemy generation (scenario retrival & handling)
+#### Implement settings menu
 
-### Player
+### Migrate Processes to their own files
 
-#### Implement the player's basic movement (w,s,a,d)
+#### Migrate whole classes to their own files
 
-#### Implement the player's dodge ability [Just keybind and movement not intagibility] (space)
+#### Migrate like functions from unbefitting classes into their own class and file
 
-#### Implement the player's attacks [Just keybinds] (mouse events)
-
-#### Implement the player's abilities [Just keybinds] (1,2,3)
-
-#### Implement the player's interaction [Just keybinds since it's on a case by case basis] (e)
-
-#### Implement the player's chat/command window [Just keybinds and a few basic commands] (t)
-
-#### Implement player's map [Just the keybind] (TAB)
-
-#### Implement the player's Inventory [Just keybind and basic UI structure] (e) {Single-Revamp}
-
-#### Implement the player's abilities page [Just keybind and basic UI structure] (o) {Single-Revamp}
-
-#### Implement the player's compendium [Just keybind and basic UI structure] (m) {Single-Revamp}
+#### Migrate functions better suited in another class/file to the respective class/file
 
 ### Enemy Spawning/Creation
 
@@ -108,7 +94,21 @@
 
 ##### Implement SMod applying in abilities page
 
-##### Implement compendium page updating based off the enemies_seen array in the player's file
+##### Implement the player's compendium (l)
+
+###### Implement the compendium home page
+
+###### Implement switching compendium pages
+
+###### Implement enemies compendium page
+
+###### Implement items compendium page
+
+###### Implement key NPCs compendium page
+
+###### Implement effects compendium page
+
+##### Implement compendium page updating based off the enemies_seen, items_seen, npcs_seen, and effects_seen, arrays in the player's file
 
 #### NPCs
 
@@ -131,6 +131,8 @@
 #### Implement auto updating of subtitle from package.json file
 
 #### Implement README.md into footer
+
+#### Implement serverside saving of dungeon schematics
 
 #### Implement Credential API for logging in and profile saving
 
@@ -165,5 +167,69 @@
 #### Basic steps tbd2
 
 ## Completed Items
+
+### Make Surrounding Webpage(done)
+
+#### Style Header
+
+#### Style Login Area (feature to be implemented later)
+
+#### Style Game Housing
+
+##### Bezeled edges surrounding game window
+
+##### Status bar below game window
+
+##### Miscellaneous Menus (i.e. inventory or chat) to the right of the game window
+
+#### Set subtitle to display the current game version
+
+#### Style and fill out footer (aka about us)
+
+#### Update README
+
+### Room Generation(done) {Simple-Revamp}
+
+#### Implement load and save features, as well as a constructor holding it's type and dimensions
+
+#### Implement Enemy generation (scenario retrival & handling)
+
+### Implement Basic Game Existance(done)
+
+#### Implement Game rendering using Pixi.js
+
+#### Implement rendering of a player placeholder/sprite
+
+#### Remove unnecessary props passing and calls in methods/remove React from classes where possible
+
+### Player(done)
+
+#### Implement the player's basic movement (w,s,a,d)
+
+#### Implement the player's dodge ability [Just keybind and movement not intagibility] (space)
+
+#### Implement the player's attacks [Just keybinds] (mouse events)
+
+#### Implement the player's abilities [Just keybinds] (1,2,3)
+
+#### Implement the player's interaction [Just keybinds since it's on a case by case basis] (e)
+
+#### Implement the player's chat/command window [Just keybinds and a few basic commands] (t)
+
+#### Implement player's map [Just the keybind] (m)
+
+#### Implement the player's Inventory [Just keybind and basic UI structure] (e) {Single-Revamp}
+
+#### Implement the player's abilities page [Just keybind and basic UI structure] (o) {Single-Revamp}
+
+### Start Menu(done)
+
+#### Implement Start Menu handling in rendering
+
+#### Implement Start button
+
+#### Implement Settings button
+
+#### Implement share button
 
 ## Miscellaneous
