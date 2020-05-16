@@ -1,3 +1,5 @@
+import Enemy from './Enemy';
+
 class Room{
    constructor(x, y, enm, trea, entr){
       this.state = {
@@ -7,25 +9,24 @@ class Room{
          treasure: trea,
          entrances: entr
       }
-      this.init();
    }
    init(){
       console.log(this.state);
-      if(this.state.x == null || this.state.x === undefined || this.state.x == -1)
+      if(this.state.x == null || this.state.x === undefined || this.state.x === -1)
          this.state.x = Math.floor(Math.random()*40+1);
-      if(this.state.y == null || this.state.y === undefined || this.state.y == -1)
+      if(this.state.y == null || this.state.y === undefined || this.state.y === -1)
          this.state.y = Math.floor(Math.random()*30+1);
-      if(this.state.enemies == null || this.state.enemies === undefined || this.state.enemies == -1)
-         this.state.enemies = this.genEnemies(this.state.x, this.state.y);
+      if(this.state.enemies == null || this.state.enemies === undefined || this.state.enemies === -1)
+         this.state.enemies = this.genEnemies(this.genNumEnemies());
       if(this.state.treasure == null || this.state.treasure === undefined)
          this.state.treasure = this.genTreasure(this.state.x,this.state.y);
-      if(this.state.entrances == null || this.state.entrances === undefined || this.state.entrances == -1)
+      if(this.state.entrances == null || this.state.entrances === undefined || this.state.entrances === -1)
          this.state.entrances = this.genEntrances();
       console.log(this.state);
    }
 
-   genEnemies(x, y){
-      let area = x*y;
+   genNumEnemies(){
+      let area = this.state.x*this.state.y;
       if(area < 225)
          return 0;
       if(area >= 225 && area < 900)
@@ -38,6 +39,15 @@ class Room{
          return Math.floor(Math.random()*21+1);
       if(area >= 22500)
          return Math.floor(Math.random()*34+1);
+   }
+
+   genEnemies(num){
+      let result = [];
+      for(let k = 0; k < num; k++){
+         result[k] = new Enemy(null, (Math.random()*(this.state.x-1)+1), (Math.random()*(this.state.y-1)+1), `bruh${k}`, '#000000', '_common', null, null);
+         result[k].init();
+      }
+      this.state.enemies = result;
    }
 
    genTreasure(x,y){
@@ -61,6 +71,4 @@ class Room{
    }
 }
 
-module.exports = {
-   Room: Room
-}
+export default Room;

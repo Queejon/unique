@@ -3,6 +3,8 @@ import './App.css';
 import Title from './scripts/Title';
 import Player from './scripts/Player';
 import Inventory from './scripts/Inventory';
+import Room from './scripts/Room';
+import Enemy from './scripts/Enemy';
 
 const PIXI = require('pixi.js');
 
@@ -66,6 +68,7 @@ class Game extends React.Component{
         dev_mode: false
       },
       game: new PIXI.Application({width: 800, height: 600, transparent: true}),
+      curRoom: new Room(800, 600),
       player: new Player(400,300),
       gameBar: new GameBar(props),
       gameMenu: new GameMenu(props),
@@ -91,13 +94,15 @@ class Game extends React.Component{
 
   async init1(props){
     let game = this.state.game;
+    let enemy = new Enemy(null, 100, 100, ["50-S", "50-N"], "bruh1", "#ffffff", "_common", null, null);
     game.view.id = "Game-driver";
     game.stage.addChildAt(this.state.player.body, 0);
+    game.stage.addChildAt(enemy.body, 1);
     game.ticker.add(() => this.playerLoop(props));
-    this.setState({game: game}, this.init2());
+    this.setState({game: game}, this.init2(props, enemy));
   }
 
-  async init2(){
+  async init2(props, enemy){
     //Disabling Mouse Features
     document.oncontextmenu = (e) => {return false};
     //Mouse and Keyboard Events
