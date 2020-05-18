@@ -94,15 +94,15 @@ class Game extends React.Component{
 
   async init1(props){
     let game = this.state.game;
-    let enemy = new Enemy(null, 100, 100, ["50-S", "50-N"], "bruh1", "#ffffff", "_common", null, null);
+    let enemies = [new Enemy(null, 100, 100, ["S","S","S","S","S","S","S","S","S","S","N","N","N","N","N","N","N","N","N","N"], "bruh1", "#ffffff", "_common", null, null)];
     game.view.id = "Game-driver";
     game.stage.addChildAt(this.state.player.body, 0);
-    game.stage.addChildAt(enemy.body, 1);
-    game.ticker.add(() => this.playerLoop(props));
-    this.setState({game: game}, this.init2(props, enemy));
+    game.stage.addChildAt(enemies[0].body, 1);
+    game.ticker.add(() => this.loops(props));
+    this.setState({game: game}, this.init2(props, enemies));
   }
 
-  async init2(props, enemy){
+  async init2(props, enemies){
     //Disabling Mouse Features
     document.oncontextmenu = (e) => {return false};
     //Mouse and Keyboard Events
@@ -113,6 +113,7 @@ class Game extends React.Component{
 
     //Adding Game to DOM
     document.getElementById("Game-window").appendChild(this.state.game.view);
+    this.setState({enemies: enemies});
   }
 
   keysDown(e){
@@ -133,6 +134,11 @@ class Game extends React.Component{
   mouseUp(e){
     //console.log(e.button);
     keys[`M${e.button}`] = false;
+  }
+
+  loops(props){
+    this.playerLoop(props);
+    this.enemyLoop(props);
   }
 
   playerLoop(props){
@@ -219,6 +225,42 @@ class Game extends React.Component{
         if(keys["27"])
           this.closeMenu(props);
       }
+  }
+
+  enemyLoop(props){
+    let enemies = this.state.enemies;
+    for(let k = 0; k < enemies.length; k++){
+      if(enemies[k].moveLoop[enemies[k].moveNum].toLowerCase() === "s"){
+        if(enemies[k].y + 5 < 580)
+          enemies.y += 5;
+        else
+          enemies.y = 580;
+      }
+      else if(enemies[k].moveLoop[enemies[k].moveNum].toLowerCase() === "n"){
+        if(enemies[k].y - 5 > 0)
+          enemies.y -= 5;
+        else
+          enemies.y = 0;
+      }
+      else if(enemies[k].moveLoop[enemies[k].moveNum].toLowerCase() === "w"){
+        if(enemies[k].x - 5 > 0)
+          enemies.x -= 5;
+        else
+          enemies.x = 0;
+      }
+      else if(enemies[k].moveLoop[enemies[k].moveNum].toLowerCase() === "e"){
+        if(enemies[k].x + 5 < 780)
+          enemies.x += 5;
+        else
+          enemies.x = 780;
+      }
+      if(enemies[k].moveNum + 1 < enemies[k].moveLoop.length)
+        enemies[k].moveNum++;
+      else
+        enemies[k].moveNum = 0;
+      this.setState({enemies: enemies});
+      this.state.enemies[k].update();
+    }
   }
 
   openConsole(props){

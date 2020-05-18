@@ -9,6 +9,7 @@ class Enemy{
       this.y = y;
       this.body = new PIXI.Graphics();
       this.moveLoop = [];
+      this.moveNum = 0;
       this.name = name;
       this.color = color;
       this.rarity = rarity;
@@ -67,19 +68,9 @@ class Enemy{
    genID(){
       let result = "";
       for(let k = 0; k < 6; k++){
-         result += Math.floor(Math.random()*10);
+         result += `${Math.floor(Math.random()*10)}`;
       }
       return result;
-   }
-
-   processMove(){
-      let steps = [];
-      for(let k = 0; k < this.moveLoop.length; k++){
-         let num = this.moveLoop[k].substring(0, this.moveLoop[k].indexOf("-"));
-         let dir = this.moveLoop[k].substring(this.moveLoop[k].indexOf("-")+1);
-         steps[k] = {numSteps: num, direction: dir};
-      }
-      this.moveLoop = steps;
    }
 }
 
